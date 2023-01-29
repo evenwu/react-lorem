@@ -12,17 +12,23 @@
   },
   "license": "ISC",
   "author": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "cz": "cz",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "build": "tsc --pretty",
+    "lint": "eslint ./src",
+    "test": "jest",
+    "dev": "ts-node-dev src/start.ts"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
+    "@types/node": "^18.11.18",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^8.0.0"
+    "husky": "^8.0.0",
+    "typescript": "^4.9.4"
   }
 }

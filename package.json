@@ -1,14 +1,14 @@
 {
-  "name": "@evenwu/react-lorem",
+  "name": "react-zhlorem",
   "version": "1.0.0",
   "description": "",
-  "homepage": "https://github.com/evenwu/react-lorem#readme",
+  "homepage": "https://github.com/evenwu/react-zhlorem#readme",
   "bugs": {
-    "url": "https://github.com/evenwu/react-lorem/issues"
+    "url": "https://github.com/evenwu/react-zhlorem/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/evenwu/react-lorem.git"
+    "url": "git+https://github.com/evenwu/react-zhlorem.git"
   },
   "license": "ISC",
   "author": "",

@@ -19,8 +19,11 @@ const END_PUNCTUATION = {
 };
 
 // Try to parse a value and return default value if it could not parsed as number
-function parseIntWithDefault(value: string, defaultValue: number): number {
-  let finalValue = parseInt(value, 10);
+function parseIntWithDefault(
+  value: string | number,
+  defaultValue: number,
+): number {
+  let finalValue = typeof value === 'string' ? parseInt(value, 10) : value;
   if (Number.isNaN(finalValue)) finalValue = defaultValue;
   return finalValue;
 }
@@ -100,20 +103,21 @@ export interface ZhLoremProps {
   /**
    * @default 3
    */
-  sentence?: number;
+  sentence: string | number;
 
   /**
    * @default 8
    */
-  avgWordsPerSentence?: number;
+  avgWordsPerSentence: string | number;
 }
 
 export const ZhLorem = (props: ZhLoremProps) => {
   const { sentence, avgWordsPerSentence } = props;
-  const result = createParagraph(sentence, () =>
-    createSentence(avgWordsPerSentence),
+  const paragraphLength = parseIntWithDefault(sentence, DEFAULT_PROPS.sentence);
+  const awps = parseIntWithDefault(
+    avgWordsPerSentence,
+    DEFAULT_PROPS.avgWordsPerSentence,
   );
+  const result = createParagraph(paragraphLength, () => createSentence(awps));
   return result;
 };
-
-export default ZhLorem;

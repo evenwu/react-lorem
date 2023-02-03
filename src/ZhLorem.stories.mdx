@@ -1,0 +1,15 @@
+import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+
+import ZhLorem from './ZhLorem';
+
+<Meta title="ZhLorem" component={ZhLorem} />
+
+export const Template = (args) => <ZhLorem {...args} />;
+
+# ZhLorem
+
+<ArgsTable of={ZhLorem} />
+
+<Canvas>
+  <Story name="Basic Usage">{Template.bind({})}</Story>
+</Canvas>

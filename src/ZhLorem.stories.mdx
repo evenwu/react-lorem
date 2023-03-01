@@ -1,0 +1,27 @@
+import { Meta, ArgsTable, Canvas, Story } from '@storybook/addon-docs';
+
+import { ZhLorem } from './ZhLorem';
+
+<Meta title="ZhLorem" component={ZhLorem} />
+
+export const Template = (args) => <ZhLorem {...args} />;
+
+# ZhLorem
+
+<ArgsTable of={ZhLorem} />
+
+<Canvas>
+  <Story
+    name="Basic Usage"
+    args={{
+      sentence: 1,
+      avgWordsPerSentence: 8,
+    }}
+    argTypes={{
+      sentence: { control: { type: 'range', min: 1, max: 20 } },
+      avgWordsPerSentence: { control: { type: 'range', min: 1, max: 20 } },
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
